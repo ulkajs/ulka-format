@@ -6,9 +6,7 @@ import prettier from "prettier";
 import format from "./index";
 
 async function run(cwd: string, args: string[]) {
-  const config = (await prettier.resolveConfig(cwd, { useCache: false })) || {};
-
-  console.log(config);
+  const config = await prettier.resolveConfig(cwd, { useCache: false });
 
   const files = (await fg(args, { cwd, absolute: true })).filter(
     (a) => path.extname(a) === ".ulka"

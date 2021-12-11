@@ -2,7 +2,9 @@ import prettier, { Options } from "prettier";
 
 export = format;
 
-function format(str: string, config: Options = {}) {
+function format(str: string, config?: Options | null) {
+  config = config || {};
+
   str = replaceUlkaTags(str, config);
 
   str = prettier.format(str, { ...config, parser: "html" });
