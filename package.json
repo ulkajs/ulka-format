@@ -8,6 +8,10 @@
   "repository": "https://github.com/ulkajs/ulka-format.git",
   "author": "Roshan Acharya <acharyaroshan2357@gmail.com>",
   "license": "MIT",
+  "files": [
+    "dist",
+    "bin"
+  ],
   "scripts": {
     "watch": "tsc -w",
     "build": "tsc",
