@@ -3,8 +3,6 @@ import prettier, { Options } from "prettier";
 export = format;
 
 function format(str: string, config: Options = {}) {
-  if (str.startsWith(`<!-- ulka-format-ignore -->`)) return str;
-
   str = replaceUlkaTags(str, config);
 
   str = prettier.format(str, { ...config, parser: "html" });

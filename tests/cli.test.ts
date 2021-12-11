@@ -2,8 +2,9 @@ import fs from "fs";
 import path from "path";
 import run from "../src/cli";
 
-const indexfile = path.join(__dirname, "resource", "index.ulka");
-const ignoreFile = path.join(__dirname, "resource", "ignorefile.ulka");
+const cwd = path.join(__dirname, "resource");
+const indexfile = path.join(cwd, "index.ulka");
+const ignoreFile = path.join(cwd, "ignorefile.ulka");
 
 let indexFileContent: string;
 let ignoreFileContent: string;
@@ -11,7 +12,7 @@ beforeAll(async () => {
   indexFileContent = fs.readFileSync(indexfile, "utf-8");
   ignoreFileContent = fs.readFileSync(ignoreFile, "utf-8");
 
-  await run(__dirname, ["resource/**.ulka"]);
+  await run(cwd, ["**.ulka"]);
 });
 
 afterAll(() => {

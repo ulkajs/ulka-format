@@ -71,9 +71,4 @@ describe("format", () => {
       `<span>{{ name; }}</span>`
     );
   });
-
-  test("should ignore file if starts with <!-- ulka-format-ignore -->", () => {
-    const str = `<!-- ulka-format-ignore --> {{name  }}`;
-    expect(format(str)).toBe(str);
-  });
 });
