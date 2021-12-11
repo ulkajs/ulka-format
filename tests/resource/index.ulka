@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <title>{{ matter.title }}</title>
+</head>
+<body>
+    {{
+        const name = "Roshan Acharya"
+    }}
+
+    {{
+        // prettier-ignore
+        const html = /* HTML */` <h1> ${data}    </h1>`
+    }}
+
+    {{
+        data.map(a => a.text).filter(a => a).map(a => /* HTML */`<h1>${a}</h1>`)
+    }}
+
+    <span>{{ cosnole.log("Hi") }}</span>
+
+    <h1>{{ console.log("Hi") }}</h1>
+</body>
+</html>
